@@ -1,0 +1,49 @@
+function adicionarNovosChamados() {
+
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const origem = ss.getSheetByName("ProjetoGabriel");
+  const destino = ss.getSheetByName("Chamados Mar/26");
+
+  const dadosOrigem = origem.getDataRange().getValues();
+  const dadosDestino = destino.getDataRange().getValues();
+
+  const bilhetesExistentes = new Set(
+    dadosDestino.slice(1).map(l => String(l[0]).trim())
+  );
+
+  const novos = [];
+
+  for (let i = 1; i < dadosOrigem.length; i++) {
+
+    const linha = dadosOrigem[i];
+    const bilhete = String(linha[0]).trim();
+
+    if (bilhete && !bilhetesExistentes.has(bilhete)) {
+
+      novos.push([
+        linha[0], // A → A
+        "",
+        linha[1], // B → C
+        "",
+        linha[3], // D → E
+        "",
+        linha[4], // E → G
+        linha[2]  // C → H
+      ]);
+
+      bilhetesExistentes.add(bilhete);
+    }
+  }
+
+  if (novos.length === 0) return;
+
+  const linhaInicio = destino.getLastRow() + 1;
+
+  destino.getRange(
+    linhaInicio,
+    1,
+    novos.length,
+    novos[0].length
+  ).setValues(novos);
+
+}
