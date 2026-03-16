@@ -44,6 +44,9 @@ Trigger → Processamento de dados → Integração com serviço → Registro da
 
 # 📸 Workflow
 
+*Chamados do Jira*
+<img width="1366" height="635" alt="image" src="https://github.com/user-attachments/assets/9cfbcbbd-7a70-4270-807a-40a0bc109cad" />
+
 *N8N - Projeto*
 <img width="1366" height="618" alt="image" src="https://github.com/user-attachments/assets/6521d358-e6dc-4c24-a488-3349dae96862" />
 
