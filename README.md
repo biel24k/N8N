@@ -12,7 +12,7 @@ O workflow realiza automaticamente:
 
 1. Recebe uma requisição ou gatilho disparada em um horário específico
 2. Processa os dados recebidos
-3. Executa uma ação automatizada de limpeza de daos
+3. Executa uma ação automatizada de limpeza de dados
 4. Registra as informações em uma ferramenta de armazenamento ou planilha
 
 ---
